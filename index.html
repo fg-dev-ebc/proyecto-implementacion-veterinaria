@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetFinder - Directorio de Veterinarias</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="nav-brand">
+                    <i class="fas fa-heart"></i>
+                    <span>VetFinder</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="#servicios">Servicios</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#contacto">Contacto</a>
+                    <button class="btn btn-primary" onclick="showDirectory()">Ver Directorio</button>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Encuentra la mejor <span class="highlight">veterinaria</span> cerca de ti</h1>
+                        <p>Conectamos a las mascotas con los mejores profesionales veterinarios. Encuentra atención de calidad, cerca de tu ubicación.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-large" onclick="showDirectory()">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Buscar Veterinarias
+                            </button>
+                            <button class="btn btn-outline btn-large">
+                                <i class="fas fa-phone"></i>
+                                Emergencias 24/7
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Veterinario con mascota">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features" id="servicios">
+            <div class="container">
+                <div class="section-header">
+                    <h2>¿Por qué elegir VetFinder?</h2>
+                    <p>Facilitamos la búsqueda de atención veterinaria de calidad para tu mascota</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Ubicación Inteligente</h3>
+                        <p>Encuentra veterinarias cerca de ti usando tu ubicación actual</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Profesionales Verificados</h3>
+                        <p>Todos nuestros veterinarios están certificados y verificados</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Horarios Flexibles</h3>
+                        <p>Encuentra atención veterinaria en horarios que se adapten a ti</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Veterinarias Registradas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Ciudades Cubiertas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10k+</div>
+                        <div class="stat-label">Mascotas Atendidas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8</div>
+                        <div class="stat-label">Calificación Promedio</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta">
+            <div class="container">
+                <h2>¿Listo para encontrar la veterinaria perfecta?</h2>
+                <p>Únete a miles de dueños de mascotas que confían en VetFinder para encontrar la mejor atención veterinaria</p>
+                <button class="btn btn-primary btn-large" onclick="showDirectory()">Explorar Directorio</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="footer-brand">
+                            <i class="fas fa-heart"></i>
+                            <span>VetFinder</span>
+                        </div>
+                        <p>Conectando mascotas con los mejores veterinarios desde 2024</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Servicios</h4>
+                        <ul>
+                            <li>Directorio de Veterinarias</li>
+                            <li>Emergencias 24/7</li>
+                            <li>Consultas Online</li>
+                            <li>Vacunación</li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li>Sobre Nosotros</li>
+                            <li>Contacto</li>
+                            <li>Términos de Uso</li>
+                            <li>Privacidad</li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li>info@vetfinder.com</li>
+                            <li>+1 (555) 123-4567</li>
+                            <li>Ciudad de México, México</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 VetFinder. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Directory Page -->
+    <div id="directory-page" class="hidden">
+        <!-- Directory Header -->
+        <header class="directory-header">
+            <div class="container">
+                <div class="directory-nav">
+                    <div class="nav-brand" onclick="showLanding()">
+                        <i class="fas fa-heart"></i>
+                        <span>VetFinder</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="showLanding()">Volver al Inicio</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Directory Title -->
+            <div class="directory-title">
+                <h1>Directorio de Veterinarias</h1>
+                <p>Encuentra la mejor atención veterinaria cerca de ti</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-container">
+                <div class="filters-grid">
+                    <div class="search-input">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar por nombre o zona...">
+                    </div>
+                    <select id="cityFilter">
+                        <option value="todas">Todas las ciudades</option>
+                        <option value="Ciudad de México">Ciudad de México</option>
+                        <option value="Guadalajara">Guadalajara</option>
+                        <option value="Monterrey">Monterrey</option>
+                    </select>
+                    <select id="sortBy">
+                        <option value="distancia">Más cercanas</option>
+                        <option value="rating">Mejor calificadas</option>
+                        <option value="nombre">Nombre A-Z</option>
+                    </select>
+                    <button class="btn btn-primary" onclick="applyFilters()">
+                        <i class="fas fa-filter"></i>
+                        Aplicar Filtros
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="results-info">
+                <p id="resultsCount">Cargando veterinarias...</p>
+            </div>
+
+            <!-- Veterinarias Grid -->
+            <div id="veterinariasGrid" class="veterinarias-grid">
+                <!-- Las cards se generarán dinámicamente con JavaScript -->
+            </div>
+
+            <!-- No Results -->
+            <div id="noResults" class="no-results hidden">
+                <i class="fas fa-search"></i>
+                <h3>No se encontraron veterinarias</h3>
+                <p>Intenta ajustar tus filtros de búsqueda</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
