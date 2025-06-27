@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VetFinder - Directorio de Veterinarias</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body>
     <!-- Landing Page -->
@@ -14,17 +15,17 @@
         <header class="header">
             <div class="container">
                 <div class="nav-brand">
-                    <i class="fas fa-heart"></i>
+                    <i data-lucide="heart"></i>
                     <span>VetFinder</span>
                 </div>
-                <nav class="nav-menu">
+                <nav class="nav-menu" id="navMenu">
                     <a href="#servicios">Servicios</a>
                     <a href="#nosotros">Nosotros</a>
                     <a href="#contacto">Contacto</a>
                     <button class="btn btn-primary" onclick="showDirectory()">Ver Directorio</button>
                 </nav>
-                <div class="mobile-menu-toggle">
-                    <i class="fas fa-bars"></i>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i data-lucide="menu"></i>
                 </div>
             </div>
         </header>
@@ -38,11 +39,11 @@
                         <p>Conectamos a las mascotas con los mejores profesionales veterinarios. Encuentra atención de calidad, cerca de tu ubicación.</p>
                         <div class="hero-buttons">
                             <button class="btn btn-primary btn-large" onclick="showDirectory()">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i data-lucide="map-pin"></i>
                                 Buscar Veterinarias
                             </button>
                             <button class="btn btn-outline btn-large">
-                                <i class="fas fa-phone"></i>
+                                <i data-lucide="phone"></i>
                                 Emergencias 24/7
                             </button>
                         </div>
@@ -63,17 +64,17 @@
                 </div>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i data-lucide="map-pin"></i>
                         <h3>Ubicación Inteligente</h3>
                         <p>Encuentra veterinarias cerca de ti usando tu ubicación actual</p>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-shield-alt"></i>
+                        <i data-lucide="shield-check"></i>
                         <h3>Profesionales Verificados</h3>
                         <p>Todos nuestros veterinarios están certificados y verificados</p>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-clock"></i>
+                        <i data-lucide="clock"></i>
                         <h3>Horarios Flexibles</h3>
                         <p>Encuentra atención veterinaria en horarios que se adapten a ti</p>
                     </div>
@@ -115,12 +116,12 @@
         </section>
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer" id="contacto">
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-section">
                         <div class="footer-brand">
-                            <i class="fas fa-heart"></i>
+                            <i data-lucide="heart"></i>
                             <span>VetFinder</span>
                         </div>
                         <p>Conectando mascotas con los mejores veterinarios desde 2024</p>
@@ -166,10 +167,13 @@
             <div class="container">
                 <div class="directory-nav">
                     <div class="nav-brand" onclick="showLanding()">
-                        <i class="fas fa-heart"></i>
+                        <i data-lucide="heart"></i>
                         <span>VetFinder</span>
                     </div>
-                    <button class="btn btn-outline" onclick="showLanding()">Volver al Inicio</button>
+                    <button class="btn btn-outline" onclick="showLanding()">
+                        <i data-lucide="arrow-left"></i>
+                        Volver al Inicio
+                    </button>
                 </div>
             </div>
         </header>
@@ -185,7 +189,7 @@
             <div class="filters-container">
                 <div class="filters-grid">
                     <div class="search-input">
-                        <i class="fas fa-search"></i>
+                        <i data-lucide="search"></i>
                         <input type="text" id="searchInput" placeholder="Buscar por nombre o zona...">
                     </div>
                     <select id="cityFilter">
@@ -200,7 +204,7 @@
                         <option value="nombre">Nombre A-Z</option>
                     </select>
                     <button class="btn btn-primary" onclick="applyFilters()">
-                        <i class="fas fa-filter"></i>
+                        <i data-lucide="filter"></i>
                         Aplicar Filtros
                     </button>
                 </div>
@@ -218,7 +222,7 @@
 
             <!-- No Results -->
             <div id="noResults" class="no-results hidden">
-                <i class="fas fa-search"></i>
+                <i data-lucide="search-x"></i>
                 <h3>No se encontraron veterinarias</h3>
                 <p>Intenta ajustar tus filtros de búsqueda</p>
             </div>
@@ -226,5 +230,11 @@
     </div>
 
     <script src="main.js"></script>
+    <script>
+        // Inicializar Lucide icons cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+        });
+    </script>
 </body>
 </html>
