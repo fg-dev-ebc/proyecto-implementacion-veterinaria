@@ -229,6 +229,32 @@
         </div>
     </div>
 
+    <!-- Detail Page -->
+    <div id="detail-page" class="hidden">
+        <!-- Detail Header -->
+        <header class="directory-header">
+            <div class="container">
+                <div class="directory-nav">
+                    <div class="nav-brand" onclick="showLanding()">
+                        <i data-lucide="heart"></i>
+                        <span>VetFinder</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="goBackToDirectory()">
+                        <i data-lucide="arrow-left"></i>
+                        Volver a Resultados
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Vet Detail Content -->
+            <div id="vetDetailContent" class="vet-detail-container">
+                <!-- El contenido se generará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
     <script src="main.js"></script>
     <script>
         // Inicializar Lucide icons cuando el DOM esté listo
