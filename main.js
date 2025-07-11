@@ -125,3 +125,48 @@ function callVet(telefono) {
     window.open(`tel:${telefono}`, '_self');
   }
 }
+
+// filtros y busqueda
+function applyFilters() {
+  const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+  const cityFilter = document.getElementById("cityFilter").value;
+  const sortBy = document.getElementById("sortBy").value;
+  
+  // filtrar por busqueda y ciudad
+  filteredVeterinarias = veterinarias.filter(vet => {
+    const matchesSearch = vet.nombre.toLowerCase().includes(searchTerm) || 
+                         vet.zona.toLowerCase().includes(searchTerm) ||
+                         vet.direccion.toLowerCase().includes(searchTerm);
+    
+    const matchesCity = cityFilter === "todas" || vet.ciudad === cityFilter;
+    
+    return matchesSearch && matchesCity;
+  });
+  
+  // ordenar
+  if (sortBy === "rating") {
+    filteredVeterinarias.sort((a, b) => b.rating - a.rating);
+  } else if (sortBy === "nombre") {
+    filteredVeterinarias.sort((a, b) => a.nombre.localeCompare(b.nombre));
+  }
+  
+  renderVeterinarias();
+}
+
+// busqueda en tiempo real
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById("searchInput");
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilters);
+  }
+  
+  const cityFilter = document.getElementById("cityFilter");
+  if (cityFilter) {
+    cityFilter.addEventListener('change', applyFilters);
+  }
+  
+  const sortBy = document.getElementById("sortBy");
+  if (sortBy) {
+    sortBy.addEventListener('change', applyFilters);
+  }
+});
