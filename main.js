@@ -12,6 +12,8 @@ const veterinarias = [
     imagen: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     ciudad: "Ciudad de México",
     zona: "San Ángel",
+    lat: 19.3467,
+    lng: -99.1903,
     emergencia24h: true
   },
   {
@@ -26,6 +28,8 @@ const veterinarias = [
     imagen: "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     ciudad: "Ciudad de México",
     zona: "Roma Norte",
+    lat: 19.4144,
+    lng: -99.1588,
     emergencia24h: true
   },
   {
@@ -40,6 +44,8 @@ const veterinarias = [
     imagen: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     ciudad: "Ciudad de México",
     zona: "Condesa",
+    lat: 19.4066,
+    lng: -99.1718,
     emergencia24h: false
   },
   {
@@ -54,6 +60,8 @@ const veterinarias = [
     imagen: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     ciudad: "Ciudad de México",
     zona: "Polanco",
+    lat: 19.4319,
+    lng: -99.1951,
     emergencia24h: false
   },
   {
@@ -68,6 +76,8 @@ const veterinarias = [
     imagen: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     ciudad: "Guadalajara",
     zona: "Centro",
+    lat: 20.6597,
+    lng: -103.3496,
     emergencia24h: true
   }
 ];
@@ -230,7 +240,7 @@ function renderVetDetail(vet) {
       <button class="btn btn-primary btn-large" onclick="callVet('${vet.telefono}')">
         <i data-lucide="phone"></i> Llamar Ahora
       </button>
-      <button class="btn btn-outline btn-large" onclick="getDirections()">
+      <button class="btn btn-outline btn-large" onclick="getDirections(${vet.lat}, ${vet.lng})">
         <i data-lucide="navigation"></i> Cómo Llegar
       </button>
     </div>
@@ -242,8 +252,13 @@ function renderVetDetail(vet) {
   }
 }
 
-function getDirections() {
-  alert('Función de direcciones próximamente');
+function getDirections(lat, lng) {
+  if (lat && lng) {
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+    window.open(url, '_blank');
+  } else {
+    alert('Coordenadas no disponibles');
+  }
 }
 
 // menu responsive
