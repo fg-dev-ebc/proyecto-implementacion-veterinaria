@@ -246,8 +246,46 @@ function getDirections() {
   alert('Función de direcciones próximamente');
 }
 
+// menu responsive
+function setupMobileMenu() {
+  const mobileToggle = document.getElementById("mobileMenuToggle");
+  const navMenu = document.getElementById("navMenu");
+  
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      
+      // cambiar icono
+      const icon = mobileToggle.querySelector('i');
+      if (navMenu.classList.contains('active')) {
+        icon.setAttribute('data-lucide', 'x');
+      } else {
+        icon.setAttribute('data-lucide', 'menu');
+      }
+      
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+    
+    // cerrar menu al hacer click fuera
+    document.addEventListener('click', function(event) {
+      if (!navMenu.contains(event.target) && !mobileToggle.contains(event.target)) {
+        navMenu.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        icon.setAttribute('data-lucide', 'menu');
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      }
+    });
+  }
+}
+
 // busqueda en tiempo real
 document.addEventListener('DOMContentLoaded', function() {
+  setupMobileMenu();
+  
   const searchInput = document.getElementById("searchInput");
   if (searchInput) {
     searchInput.addEventListener('input', applyFilters);
