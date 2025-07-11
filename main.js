@@ -41,6 +41,34 @@ const veterinarias = [
     ciudad: "Ciudad de México",
     zona: "Condesa",
     emergencia24h: false
+  },
+  {
+    id: 4,
+    nombre: "Clínica Veterinaria Polanco",
+    direccion: "Av. Presidente Masaryk 567, Polanco, CDMX",
+    telefono: "+52 55 4567-8901",
+    horario: "Lun-Vie 8:00-21:00",
+    rating: 4.6,
+    reviews: 203,
+    servicios: ["Consulta General", "Cirugía", "Spa"],
+    imagen: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    ciudad: "Ciudad de México",
+    zona: "Polanco",
+    emergencia24h: false
+  },
+  {
+    id: 5,
+    nombre: "Hospital Veterinario Guadalajara Centro",
+    direccion: "Av. Juárez 456, Centro, Guadalajara, Jal.",
+    telefono: "+52 33 1234-5678",
+    horario: "24 horas",
+    rating: 4.8,
+    reviews: 167,
+    servicios: ["Consulta General", "Urgencias", "Hospitalización"],
+    imagen: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    ciudad: "Guadalajara",
+    zona: "Centro",
+    emergencia24h: true
   }
 ];
 
