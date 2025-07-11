@@ -160,6 +160,101 @@
         </footer>
     </div>
 
+    <!-- Directory Page -->
+    <div id="directory-page" class="hidden">
+        <!-- Directory Header -->
+        <header class="directory-header">
+            <div class="container">
+                <div class="directory-nav">
+                    <div class="nav-brand" onclick="showLanding()">
+                        <i data-lucide="heart"></i>
+                        <span>VetFinder</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="showLanding()">
+                        <i data-lucide="arrow-left"></i>
+                        Volver al Inicio
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Directory Title -->
+            <div class="directory-title">
+                <h1>Directorio de Veterinarias</h1>
+                <p>Encuentra la mejor atención veterinaria cerca de ti</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-container">
+                <div class="filters-grid">
+                    <div class="search-input">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar por nombre o zona...">
+                    </div>
+                    <select id="cityFilter">
+                        <option value="todas">Todas las ciudades</option>
+                        <option value="Ciudad de México">Ciudad de México</option>
+                        <option value="Guadalajara">Guadalajara</option>
+                        <option value="Monterrey">Monterrey</option>
+                    </select>
+                    <select id="sortBy">
+                        <option value="distancia">Más cercanas</option>
+                        <option value="rating">Mejor calificadas</option>
+                        <option value="nombre">Nombre A-Z</option>
+                    </select>
+                    <button class="btn btn-primary" onclick="applyFilters()">
+                        <i data-lucide="filter"></i>
+                        Aplicar Filtros
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="results-info">
+                <p id="resultsCount">Cargando veterinarias...</p>
+            </div>
+
+            <!-- Veterinarias Grid -->
+            <div id="veterinariasGrid" class="veterinarias-grid">
+                <!-- Las cards se generarán dinámicamente con JavaScript -->
+            </div>
+
+            <!-- No Results -->
+            <div id="noResults" class="no-results hidden">
+                <i data-lucide="search-x"></i>
+                <h3>No se encontraron veterinarias</h3>
+                <p>Intenta ajustar tus filtros de búsqueda</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Page -->
+    <div id="detail-page" class="hidden">
+        <!-- Detail Header -->
+        <header class="directory-header">
+            <div class="container">
+                <div class="directory-nav">
+                    <div class="nav-brand" onclick="showLanding()">
+                        <i data-lucide="heart"></i>
+                        <span>VetFinder</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="goBackToDirectory()">
+                        <i data-lucide="arrow-left"></i>
+                        Volver a Resultados
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Vet Detail Content -->
+            <div id="vetDetailContent" class="vet-detail-container">
+                <!-- El contenido se generará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
     <script src="main.js"></script>
     <script>
         // inicializar lucide icons
