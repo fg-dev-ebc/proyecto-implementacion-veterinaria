@@ -92,6 +92,11 @@ function showVetDetail(vetId) {
   document.getElementById("landing-page").classList.add("hidden");
   document.getElementById("directory-page").classList.add("hidden");
   document.getElementById("detail-page").classList.remove("hidden");
+  
+  const vet = veterinarias.find(v => v.id === vetId);
+  if (vet) {
+    renderVetDetail(vet);
+  }
 }
 
 function goBackToDirectory() {
@@ -179,6 +184,66 @@ function applyFilters() {
   }
   
   renderVeterinarias();
+}
+
+function renderVetDetail(vet) {
+  const container = document.getElementById("vetDetailContent");
+  if (!container) return;
+  
+  container.innerHTML = `
+    <div class="vet-detail-header">
+      <div class="vet-detail-image">
+        <img src="${vet.imagen}" alt="${vet.nombre}">
+        ${vet.emergencia24h ? '<div class="badge badge-emergency">24H</div>' : ''}
+      </div>
+      <div class="vet-detail-info">
+        <h1>${vet.nombre}</h1>
+        <div class="vet-rating">
+          <span class="rating-stars">★ ${vet.rating}</span>
+          <span class="rating-count">(${vet.reviews} reseñas)</span>
+        </div>
+        <div class="vet-detail-meta">
+          <div class="meta-item">
+            <i data-lucide="map-pin"></i>
+            <span>${vet.direccion}</span>
+          </div>
+          <div class="meta-item">
+            <i data-lucide="clock"></i>
+            <span>${vet.horario}</span>
+          </div>
+          <div class="meta-item">
+            <i data-lucide="phone"></i>
+            <span>${vet.telefono}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="vet-detail-services">
+      <h3>Servicios</h3>
+      <div class="services-grid">
+        ${vet.servicios.map(servicio => `<span class="service-tag">${servicio}</span>`).join("")}
+      </div>
+    </div>
+    
+    <div class="vet-detail-actions">
+      <button class="btn btn-primary btn-large" onclick="callVet('${vet.telefono}')">
+        <i data-lucide="phone"></i> Llamar Ahora
+      </button>
+      <button class="btn btn-outline btn-large" onclick="getDirections()">
+        <i data-lucide="navigation"></i> Cómo Llegar
+      </button>
+    </div>
+  `;
+  
+  // reinicializar iconos
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+}
+
+function getDirections() {
+  alert('Función de direcciones próximamente');
 }
 
 // busqueda en tiempo real
