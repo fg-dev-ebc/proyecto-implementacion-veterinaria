@@ -3,10 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VetFinder</title>
+    <title>VetFinder - Directorio de Veterinarias</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body>
-    <h1>VetFinder</h1>
-    <p>Encuentra veterinarias cerca de ti</p>
+    <!-- Landing Page -->
+    <div id="landing-page">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="nav-brand">
+                    <i data-lucide="heart"></i>
+                    <span>VetFinder</span>
+                </div>
+                <nav class="nav-menu" id="navMenu">
+                    <a href="#servicios">Servicios</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#contacto">Contacto</a>
+                    <button class="btn btn-primary" onclick="showDirectory()">Ver Directorio</button>
+                </nav>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i data-lucide="menu"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Encuentra la mejor <span class="highlight">veterinaria</span> cerca de ti</h1>
+                        <p>Conectamos a las mascotas con los mejores profesionales veterinarios. Encuentra atención de calidad, cerca de tu ubicación.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-large" onclick="showDirectory()">
+                                <i data-lucide="map-pin"></i>
+                                Buscar Veterinarias
+                            </button>
+                            <button class="btn btn-outline btn-large">
+                                <i data-lucide="phone"></i>
+                                Emergencias 24/7
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Veterinario con mascota">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // inicializar lucide icons
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+        });
+    </script>
 </body>
 </html>
