@@ -1,8 +1,22 @@
 // navegacion
 function showDirectory() {
-  console.log('Navegando al directorio...');
+  document.getElementById("landing-page").classList.add("hidden");
+  document.getElementById("directory-page").classList.remove("hidden");
+  document.getElementById("detail-page").classList.add("hidden");
 }
 
 function showLanding() {
-  console.log('Navegando al inicio...');
+  document.getElementById("landing-page").classList.remove("hidden");
+  document.getElementById("directory-page").classList.add("hidden");
+  document.getElementById("detail-page").classList.add("hidden");
+}
+
+function showVetDetail(vetId) {
+  document.getElementById("landing-page").classList.add("hidden");
+  document.getElementById("directory-page").classList.add("hidden");
+  document.getElementById("detail-page").classList.remove("hidden");
+}
+
+function goBackToDirectory() {
+  showDirectory();
 }
