@@ -1,4 +1,4 @@
-/* reset y variables */
+/* ===== RESET Y VARIABLES ===== */
 * {
   margin: 0;
   padding: 0;
@@ -41,7 +41,7 @@ body {
   display: none !important;
 }
 
-/* botones */
+/* ===== BOTONES ===== */
 .btn {
   padding: 12px 24px;
   border: none;
@@ -82,7 +82,7 @@ body {
   font-size: 18px;
 }
 
-/* header */
+/* ===== HEADER (NAVBAR) ===== */
 .header {
   background: var(--white);
   border-bottom: 1px solid var(--gray-200);
@@ -129,10 +129,26 @@ body {
   color: var(--text-light);
   font-weight: 500;
   transition: var(--transition);
+  position: relative;
 }
 
 .nav-menu a:hover {
   color: var(--primary-color);
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
 }
 
 .mobile-menu-toggle {
@@ -201,26 +217,25 @@ body {
   transform: scale(1.02);
 }
 
-/* features */
+/* ===== FEATURES SECTION ===== */
 .features {
   padding: 80px 0;
-  background: var(--gray-50);
+  background: var(--white);
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 64px;
 }
 
 .section-header h2 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: var(--text-color);
   margin-bottom: 16px;
 }
 
 .section-header p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--text-light);
   max-width: 600px;
   margin: 0 auto;
@@ -233,10 +248,10 @@ body {
 }
 
 .feature-card {
-  background: var(--white);
-  padding: 32px;
-  border-radius: var(--radius-lg);
   text-align: center;
+  padding: 40px 32px;
+  background: var(--white);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
   transition: var(--transition);
 }
@@ -249,66 +264,63 @@ body {
 .feature-card i {
   width: 48px;
   height: 48px;
-  margin: 0 auto 24px;
   color: var(--primary-color);
+  margin-bottom: 24px;
 }
 
 .feature-card h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--text-color);
   margin-bottom: 16px;
 }
 
 .feature-card p {
   color: var(--text-light);
-  line-height: 1.6;
 }
 
-/* stats */
+/* ===== STATS SECTION ===== */
 .stats {
-  padding: 80px 0;
   background: var(--primary-color);
+  padding: 64px 0;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 32px;
+  text-align: center;
 }
 
 .stat-item {
-  text-align: center;
   color: var(--white);
 }
 
 .stat-number {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
 .stat-label {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  color: #a7f3d0;
+  font-size: 1rem;
 }
 
-/* cta */
+/* ===== CTA SECTION ===== */
 .cta {
   padding: 80px 0;
-  background: var(--gray-50);
   text-align: center;
+  background: var(--white);
 }
 
 .cta h2 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: var(--text-color);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .cta p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--text-light);
   margin-bottom: 32px;
   max-width: 600px;
