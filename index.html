@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetFinder - Directorio de Veterinarias</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+ 
+
+
+<script>
+    AOS.init({
+        duration: 1000, // Duración de animación en ms
+        once: true // Se anima solo una vez
+    });
+    lucide.createIcons();
+</script>
+
+
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page">
+        <!-- Header -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i data-lucide="heart" class="me-2"></i>
+                <span>VetFinder</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-primary ms-lg-3" onclick="showDirectory()">Ver Directorio</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="py-5" style="background-color: #E9F2FF;">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Texto -->
+            <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0" data-aos="fade-right">
+                <h1 class="display-5 fw-bold">
+                    Encuentra la mejor <span class="text-primary">veterinaria</span> cerca de ti
+                </h1>
+                <p class="lead mt-3">
+                    Conectamos a las mascotas con los mejores profesionales veterinarios. Encuentra atención de calidad, cerca de tu ubicación.
+                </p>
+                <div class="mt-4 d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                    <button class="btn btn-primary btn-lg d-flex align-items-center gap-2" onclick="showDirectory()">
+                        <i data-lucide="map-pin"></i>
+                        Buscar Veterinarias
+                    </button>
+                    <button class="btn btn-outline-primary btn-lg d-flex align-items-center gap-2">
+                        <i data-lucide="phone"></i>
+                        Emergencias 24/7
+                    </button>
+                </div>
+            </div>
+
+            <!-- Imagen -->
+            <div class="col-lg-6 text-center" data-aos="fade-left">
+                <img src="https://wakyma.com/wakymavets/blog/wp-content/uploads/2023/05/consejos-mejorar-comunicacion-duenos-mascotas-veterinaria-1920x1281.jpg"
+                     alt="Veterinario con mascota"
+                     class="img-fluid rounded shadow">
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+     <!-- Features Section -->
+<section class="py-5 bg-light" id="servicios">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold">¿Por qué elegir VetFinder?</h2>
+        <p class="lead text-secondary">
+          Facilitamos la búsqueda de atención veterinaria de calidad para tu mascota
+        </p>
+      </div>
+  
+      <div class="row row-cols-1 row-cols-md-3 g-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="col">
+          <div class="card h-100 border-0 text-center bg-white shadow-sm rounded">
+            <div class="card-body">
+              <i data-lucide="map-pin" class="mb-3" style="width:48px; height:48px; color:#0d6efd;"></i>
+              <h5 class="card-title">Ubicación Inteligente</h5>
+              <p class="card-text text-muted">
+                Encuentra veterinarias cerca de ti usando tu ubicación actual
+              </p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col">
+          <div class="card h-100 border-0 text-center bg-white shadow-sm rounded">
+            <div class="card-body">
+              <i data-lucide="shield-check" class="mb-3" style="width:48px; height:48px; color:#0d6efd;"></i>
+              <h5 class="card-title">Profesionales Verificados</h5>
+              <p class="card-text text-muted">
+                Todos nuestros veterinarios están certificados y verificados
+              </p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col">
+          <div class="card h-100 border-0 text-center bg-white shadow-sm rounded">
+            <div class="card-body">
+              <i data-lucide="clock" class="mb-3" style="width:48px; height:48px; color:#0d6efd;"></i>
+              <h5 class="card-title">Horarios Flexibles</h5>
+              <p class="card-text text-muted">
+                Encuentra atención veterinaria en horarios que se adapten a ti
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+      <!-- Stats Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <h3 class="display-5 fw-bold text-primary">500+</h3>
+          <p class="text-muted fs-5">Veterinarias Registradas</p>
+        </div>
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <h3 class="display-5 fw-bold text-primary">50+</h3>
+          <p class="text-muted fs-5">Ciudades Cubiertas</p>
+        </div>
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <h3 class="display-5 fw-bold text-primary">10k+</h3>
+          <p class="text-muted fs-5">Mascotas Atendidas</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h3 class="display-5 fw-bold text-primary">4.8</h3>
+          <p class="text-muted fs-5">Calificación Promedio</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- CTA Section -->
+<section class="py-5 bg-primary text-white text-center">
+    <div class="container">
+      <h2 class="display-5 fw-bold mb-3">¿Listo para encontrar la veterinaria perfecta?</h2>
+      <p class="lead mb-4">
+        Únete a miles de dueños de mascotas que confían en VetFinder para encontrar la mejor atención veterinaria
+      </p>
+      <button class="btn btn-light btn-lg px-4" onclick="showDirectory()">
+        Explorar Directorio
+      </button>
+    </div>
+  </section>
+  
+<!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-3" id="contacto">
+    <div class="container">
+      <div class="row gy-4 footer-content">
+        <!-- Marca -->
+        <div class="col-md-3 text-center text-md-start">
+          <div class="d-flex align-items-center mb-3 justify-content-center justify-content-md-start">
+            <i data-lucide="heart" class="me-2" style="width:24px; height:24px; color:#ff6b6b;"></i>
+            <span class="fs-4 fw-bold">VetFinder</span>
+          </div>
+          <p class="text-muted">
+            Conectando mascotas con los mejores veterinarios desde 2024
+          </p>
+        </div>
+  
+        <!-- Servicios -->
+        <div class="col-6 col-md-3">
+          <h5 class="fw-bold mb-3">Servicios</h5>
+          <ul class="list-unstyled">
+            <li>Directorio de Veterinarias</li>
+            <li>Emergencias 24/7</li>
+            <li>Consultas Online</li>
+            <li>Vacunación</li>
+          </ul>
+        </div>
+  
+        <!-- Empresa -->
+        <div class="col-6 col-md-3">
+          <h5 class="fw-bold mb-3">Empresa</h5>
+          <ul class="list-unstyled">
+            <li>Sobre Nosotros</li>
+            <li>Contacto</li>
+            <li>Términos de Uso</li>
+            <li>Privacidad</li>
+          </ul>
+        </div>
+  
+        <!-- Contacto -->
+        <div class="col-12 col-md-3">
+          <h5 class="fw-bold mb-3">Contacto</h5>
+          <ul class="list-unstyled">
+            <li>info@vetfinder.com</li>
+            <li>+1 (555) 123-4567</li>
+            <li>Ciudad de México, México</li>
+          </ul>
+        </div>
+      </div>
+  
+      <hr class="border-secondary my-4" />
+  
+      <div class="text-center text-muted small">
+        &copy; 2024 VetFinder. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+    </div>
+  
+ <!-- Directory Page -->
+<div id="directory-page" class="d-none">
+    <!-- Directory Header -->
+    <header class="bg-light py-3 mb-4 shadow-sm">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center directory-nav">
+          <div class="nav-brand d-flex align-items-center" style="cursor:pointer;" onclick="showLanding()">
+            <i data-lucide="heart" class="me-2" style="width:24px; height:24px; color:#dc3545;"></i>
+            <span class="fs-4 fw-bold">VetFinder</span>
+          </div>
+          <button class="btn btn-outline-primary" onclick="showLanding()">
+            <i data-lucide="arrow-left" class="me-1" style="width:20px; height:20px;"></i>
+            Volver al Inicio
+          </button>
+        </div>
+      </div>
+    </header>
+  
+    <div class="container">
+      <!-- Directory Title -->
+      <div class="mb-4 text-center">
+        <h1 class="fw-bold">Directorio de Veterinarias</h1>
+        <p class="text-muted fs-5">Encuentra la mejor atención veterinaria cerca de ti</p>
+      </div>
+  
+      <!-- Aquí agregarás el contenido del directorio -->
+  
+    </div>
+  </div>
+  
+  
+
+          <!-- Filters -->
+<div class="filters-container mb-4">
+    <div class="row g-3 align-items-center filters-grid">
+      <div class="col-12 col-md-4 position-relative">
+        <i data-lucide="search" class="position-absolute top-50 translate-middle-y ms-3 text-muted" style="width:20px; height:20px;"></i>
+        <input
+          type="text"
+          id="searchInput"
+          class="form-control ps-5"
+          placeholder="Buscar por nombre o zona..."
+        />
+      </div>
+  
+      <div class="col-6 col-md-3">
+        <select id="cityFilter" class="form-select">
+          <option value="todas">Todas las ciudades</option>
+          <option value="Ciudad de México">Ciudad de México</option>
+          <option value="Guadalajara">Guadalajara</option>
+          <option value="Monterrey">Monterrey</option>
+        </select>
+      </div>
+  
+      <div class="col-6 col-md-3">
+        <select id="sortBy" class="form-select">
+          <option value="distancia">Más cercanas</option>
+          <option value="rating">Mejor calificadas</option>
+          <option value="nombre">Nombre A-Z</option>
+        </select>
+      </div>
+  
+      <div class="col-12 col-md-2 d-grid">
+        <button class="btn btn-primary" onclick="applyFilters()">
+          <i data-lucide="filter" class="me-1" style="width:18px; height:18px;"></i>
+          Aplicar Filtros
+        </button>
+      </div>
+    </div>
+  </div>
+  
+
+            <!-- Results Count -->
+<div class="results-info mb-3">
+    <p id="resultsCount" class="fs-5 text-secondary">Cargando veterinarias...</p>
+  </div>
+  
+  <!-- Veterinarias Grid -->
+  <div id="veterinariasGrid" class="row g-4">
+    <!-- Las cards se generarán dinámicamente con JavaScript -->
+  </div>
+  
+  <!-- No Results -->
+  <div id="noResults" class="d-none text-center py-5">
+    <i data-lucide="search-x" class="mb-3" style="width:48px; height:48px; color:#6c757d;"></i>
+    <h3 class="mb-2 text-muted">No se encontraron veterinarias</h3>
+    <p class="text-muted">Intenta ajustar tus filtros de búsqueda</p>
+  </div>
+  </div>  
+
+    <!-- Detail Page -->
+<div id="detail-page" class="d-none">
+    <!-- Detail Header -->
+    <header class="bg-light py-3 mb-4 shadow-sm">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center directory-nav">
+          <div class="nav-brand d-flex align-items-center" style="cursor:pointer;" onclick="showLanding()">
+            <i data-lucide="heart" class="me-2" style="width:24px; height:24px; color:#dc3545;"></i>
+            <span class="fs-4 fw-bold">VetFinder</span>
+          </div>
+          <button class="btn btn-outline-primary" onclick="goBackToDirectory()">
+            <i data-lucide="arrow-left" class="me-1" style="width:20px; height:20px;"></i>
+            Volver a Resultados
+          </button>
+        </div>
+      </div>
+    </header>
+  
+    <div class="container">
+      <!-- Vet Detail Content -->
+      <div id="vetDetailContent" class="vet-detail-container">
+        <!-- El contenido se generará dinámicamente -->
+      </div>
+    </div>
+  </div>
+  
+  <script src="main.js"></script>
+  <script>
+    // Inicializar Lucide icons cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', function() {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>  
+<script src="https://unpkg.com/aos@next/disrib/aos.js"></script>
